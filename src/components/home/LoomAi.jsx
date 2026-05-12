@@ -1,4 +1,8 @@
-import { Link } from "react-router";
+import { Link ,useNavigate} from "react-router";
+const naviagte = useNavigate()
+const hanldeLoom = () =>{
+  naviagte("/loom")
+}
 const features = [
   {
     label: "Automated risk assessments",
@@ -136,14 +140,14 @@ export default function ProductsSection() {
 
                 {/* Read more */}
                 <div className="flex justify-center">
-                  <Link
-                    to="/loom"
+                  <button
+                   onClick={hanldeLoom}
                     aria-label={`Read more about ${product.name}`}
                     className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-semibold no-underline transition-colors duration-200"
                   >
                     Read More
                     <span aria-hidden="true">→</span>
-                  </Link>
+                  </button>
                 </div>
               </div>
 
