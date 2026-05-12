@@ -141,7 +141,10 @@ export default function ProductsSection() {
                 {/* Read more */}
                 <div className="flex justify-center">
                   <button
-                   onClick={hanldeLoom}
+                   onClick={() =>{
+                    window.scrollTo(0, 0);
+                    hanldeLoom
+                   }}
                     aria-label={`Read more about ${product.name}`}
                     className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-semibold no-underline transition-colors duration-200"
                   >
