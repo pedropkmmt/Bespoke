@@ -20,10 +20,11 @@ export default function LoomHomePage() {
         const el = document.querySelector(hash);
         el?.scrollIntoView({ behavior: "smooth" });
       }
+      else {
+     window.scrollTo(0, 0);
+    }
     }, [hash]);
-      useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+     
   return (
     <>
      <Navbar/>
