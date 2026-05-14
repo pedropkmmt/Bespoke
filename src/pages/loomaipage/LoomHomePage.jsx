@@ -21,6 +21,9 @@ export default function LoomHomePage() {
         el?.scrollIntoView({ behavior: "smooth" });
       }
     }, [hash]);
+      useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
      <Navbar/>
