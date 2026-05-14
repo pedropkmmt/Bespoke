@@ -13,18 +13,22 @@ import LoomCTA from "../../components/loom/Loomcta"
 import ContactLoomSection from "../../components/loom/Contactsection";
 import Footer from "../../components/Footer"
 export default function LoomHomePage() {
-  const { hash } = useLocation();
-  
-    useEffect(() => {
-      if (hash) {
-        const el = document.querySelector(hash);
-        el?.scrollIntoView({ behavior: "smooth" });
-      }
-      else {
-     window.scrollTo(0, 0);
+ const { hash } = useLocation();
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
+  // Scroll to section if hash present
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
     }
-    }, [hash]);
-     
+  }, [hash]);
+
+      
   return (
     <>
      <Navbar/>
