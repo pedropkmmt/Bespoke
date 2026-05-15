@@ -28,7 +28,6 @@ export default function LoomHomePage() {
     }
   }, [hash]);
 
-      
   return (
     <>
      <Navbar/>
