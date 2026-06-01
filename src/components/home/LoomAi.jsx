@@ -1,8 +1,4 @@
 import { Link ,useNavigate} from "react-router";
-const naviagte = useNavigate()
-const hanldeLoom = () =>{
-  naviagte("/loom")
-}
 const features = [
   {
     label: "Automated risk assessments",
@@ -67,6 +63,10 @@ const products = [
 ];
 
 export default function ProductsSection() {
+  const naviagte = useNavigate()
+  const hanldeLoom = () =>{
+  naviagte("/loom")
+}
   return (
     <section
       id="products"
@@ -101,7 +101,7 @@ export default function ProductsSection() {
                   {product.name}
                 </h3>
 
-                {/* SEO keyword tags */}
+                {/* keyword tags */}
                 <div className="flex flex-wrap gap-x-1 gap-y-1" aria-label="Keywords">
                   {product.tags.map((tag, i) => (
                     <span key={tag} className="text-violet-500 text-sm font-medium">
@@ -141,9 +141,7 @@ export default function ProductsSection() {
                 {/* Read more */}
                 <div className="flex justify-center">
                   <button
-                   onClick={() =>{
-                    hanldeLoom
-                   }}
+                   onClick={hanldeLoom}
                     aria-label={`Read more about ${product.name}`}
                     className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-semibold no-underline transition-colors duration-200"
                   >
