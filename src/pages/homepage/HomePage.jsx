@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar"
 import HeroSection from "../../components/home/HeroSection"
 import AboutUs from "../../components/home/AboutUs"
 import WhyChooseUs from "../../components/home/WhyChooseUs"
-import ProductsSection from "../../components/home/LoomAi"
+import ProductsSection from "../../components/home/Products";
 import CTASection from "../../components/home/CtaSection"
 import Banner from "../../components/home/Banner"
 import ContactHomeSection from "../../components/home/Contactsection";
