@@ -5,7 +5,7 @@ export default function Banner() {
     <div className='bg-[#0E0E13] py-16 flex justify-center items-center px-6'>
       <img
         src="./banner.png"
-        alt="Image of people looking at a laptop"
+        alt="Bespoke Solutech team collaborating on digital solutions and technology services"
         className="w-full max-w-4xl rounded-2xl object-cover"
       />
     </div>

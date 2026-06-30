@@ -2,21 +2,19 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      aria-label="About Bespoke Solutech — Mission and Vision"
+      aria-labelledby="about-heading"
       className="bg-[#0E0E13] min-h-screen px-6 pt-10 pb-16 flex items-center"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        {/* heading, body, cards */}
         <div className="flex flex-col gap-8">
 
-          {/* Heading + violet underline */}
+          {/* Heading  */}
           <div className="flex flex-col gap-3">
-            <h1 className="text-white font-bold font-serif text-4xl m-0">About Us</h1>
+            <h2 id="about-heading" className="text-white font-bold font-serif text-4xl m-0">About Us</h2>
             <div className="w-16 h-[3px] bg-violet-600 rounded-full" aria-hidden="true" />
           </div>
 
-          {/* Body paragraphs */}
           <div className="flex flex-col gap-4">
             <p className="text-white/70 text-[15px] leading-relaxed m-0">
               Bespoke Solutech is a digital solutions company that operates and manages
@@ -70,7 +68,7 @@ export default function AboutUs() {
           <div className="w-full max-w-[520px] bg-[#18171f] border border-white/5 rounded-3xl p-8 flex items-center justify-center min-h-[380px]">
             <img
               src="./Cloud.png"
-              alt="Cloud + Gears illustration"
+              alt="Cloud and digital infrastructure illustration representing Bespoke Solutech's managed digital operations"
               className="w-full h-auto object-contain"
             />
           </div>

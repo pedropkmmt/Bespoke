@@ -1,9 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactHomeSection() {
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "bespoke-localbusiness-jsonld";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bespoke Solutech",
+      "description": "Bespoke Solutech operates and manages digital products and services for businesses and organisations requiring professional-grade support.",
+      "url": "https://www.bespokesolutech.co.za",
+      "telephone": "+27108807341",
+      "email": "sales@bespokesolutech.co.za",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit H22, Workpods, 1024 Brand Road, President Park AH",
+        "addressLocality": "Midrand",
+        "postalCode": "1686",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.9989,
+        "longitude": 28.1278
+      },
+      "areaServed": "South Africa"
+    });
+    if (!document.getElementById("bespoke-localbusiness-jsonld")) {
+      document.head.appendChild(script);
+    }
+    return () => {
+      const existing = document.getElementById("bespoke-localbusiness-jsonld");
+      if (existing) existing.remove();
+    };
+  }, []);
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 

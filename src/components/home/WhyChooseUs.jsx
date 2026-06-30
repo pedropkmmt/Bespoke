@@ -5,31 +5,31 @@ const reasons = [
     icon: LayoutGrid,
     title: "Professional Digital Product Management",
     description:
-      "End-to-end operational management of your digital products with structured oversight.",
+      "End-to-end operational management of your digital products and services, with structured oversight and clear accountability at every stage.",
   },
   {
     icon: ShieldCheck,
     title: "Operational Discipline & Accountability",
     description:
-      "Clear accountability frameworks ensuring every solution is professionally supported.",
+      "Clear accountability frameworks ensuring every digital solution is professionally supported, monitored, and continuously improved.",
   },
   {
     icon: BarChart2,
     title: "Commercial Sustainability",
     description:
-      "Long-term technical and commercial sustainability for every solution we manage.",
+      "Long-term technical and commercial sustainability built into every solution we operate and manage for our clients.",
   },
   {
     icon: Eye,
     title: "Transparent Governance",
     description:
-      "Clear reporting and governance structures that keep stakeholders informed.",
+      "Clear reporting and governance structures that keep stakeholders fully informed and confident in operational decisions.",
   },
   {
     icon: Database,
     title: "Scalable Infrastructure",
     description:
-      "Enterprise-grade digital infrastructure designed to grow with your business.",
+      "Enterprise-grade digital infrastructure and cloud solutions designed to scale securely with your business growth.",
   },
 ];
 

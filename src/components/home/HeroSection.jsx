@@ -8,7 +8,7 @@ export default function HeroSection() {
     const canvas = canvasRef.current;
     const section = sectionRef.current;
     if (!canvas || !section) return;
-    const ctx = canvas.getContext("2d", { alpha: false }); 
+    const ctx = canvas.getContext("2d", { alpha: false });
 
     let animFrameId;
     let t = 0;
@@ -78,6 +78,7 @@ export default function HeroSection() {
       t++;
       animFrameId = requestAnimationFrame(draw);
     };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         isVisible = entry.isIntersecting;
@@ -99,66 +100,44 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="home"
-      aria-label="Hero — Bespoke Solutech"
-      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "#1a1a2e" }}
+      aria-label="Bespoke Solutech — Digital Solutions, Professionally Operated"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#1a1a2e]"
     >
       <canvas
         ref={canvasRef}
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full"
-        style={{
-          display: "block",
-          background: "#1a1a2e",
-          willChange: "transform", 
-          transform: "translateZ(0)", 
-        }}
+        className="block bg-[#1a1a2e] will-change-transform translate-z-0 absolute inset-0 w-full h-full"
       />
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-          backgroundSize: "200px 200px",
-        }}
+        className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%20256%20256%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cfilter%20id%3D%27noise%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%274%27%20stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url(%23noise)%27%20opacity%3D%271%27%2F%3E%3C%2Fsvg%3E')] bg-[length:200px_200px]"
       />
+
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(10,10,28,0.65) 0%, transparent 100%)",
-        }}
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,rgba(10,10,28,0.65)_0%,transparent_100%)]"
       />
 
       <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-4xl mx-auto pt-[68px]">
 
-        <p
-          className="text-[10px] tracking-[0.35em] uppercase mb-4 font-bold"
-          style={{ color: "#c4b5fd" }}
-        >
+        <p className="text-[10px] tracking-[0.35em] uppercase mb-4 font-bold text-[#c4b5fd]">
           Established 2025
         </p>
 
-         <h1
-          className="font-bold leading-[1.05] mb-8 w-full"
-          style={{
-            fontSize: "clamp(2.75rem, 6vw, 5rem)",
-            fontFamily: "'Georgia', serif",
-            letterSpacing: "-0.02em",
-          }}
+        <h1
+          className="font-bold leading-[1.05] mb-8 w-full text-[clamp(2.75rem,6vw,5rem)] [-letter-spacing:0.02em]"
         >
-          <span className="block" style={{ color: "#ffffff" }}>Digital</span>
-          <span className="block" style={{ color: "#a78bfa" }}>Solutions,</span>
-          <span className="block" style={{ color: "#ffffff" }}>Professionally</span>
-          <span className="block" style={{ color: "#ffffff" }}>Operated.</span>
+          <span aria-hidden="true">
+            <span className="block text-white">Digital</span>
+            <span className="block text-[#a78bfa]">Solutions,</span>
+            <span className="block text-white">Professionally</span>
+            <span className="block text-white">Operated.</span>
+          </span>
+          <span className="sr-only">Digital Solutions, Professionally Operated.</span>
         </h1>
 
-        <p
-          className="text-base md:text-lg max-w-xl mb-12 leading-relaxed"
-          style={{ color: "rgba(255,255,255,0.82)" }}
-        >
+        <p className="text-base md:text-lg max-w-xl mb-12 leading-relaxed text-white/[0.82]">
           Bespoke Solutech operates and manages digital products and services for businesses and
           organisations requiring professional-grade support.
         </p>
@@ -166,21 +145,14 @@ export default function HeroSection() {
         <div className="flex flex-wrap gap-4 justify-center">
           <a
             href="#consultation"
-            className="px-8 bg-violet-600 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-violet-500 active:scale-95"
-            style={{ color: "#ffffff", textDecoration: "none", display: "inline-block" }}
+            className="flex px-8 py-3.5 bg-violet-600 text-white rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-violet-500 active:scale-95 no-underline"
             aria-label="Request a consultation with Bespoke Solutech"
           >
             Request Consultation
           </a>
           <a
             href="#products"
-            className="px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-white/10 active:scale-95"
-            style={{
-              border: "1.5px solid rgba(255,255,255,0.60)",
-              color: "#ffffff",
-              textDecoration: "none",
-              display: "inline-block",
-            }}
+            className="px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-white/10 active:scale-95 border-[1.5px] border-white/60 text-white no-underline"
             aria-label="Explore Bespoke Solutech's digital solutions"
           >
             Explore Our Solutions

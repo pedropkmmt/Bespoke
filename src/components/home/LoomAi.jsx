@@ -1,4 +1,5 @@
-import { Link ,useNavigate} from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useEffect } from "react";
 const features = [
   {
     label: "Automated risk assessments",
@@ -63,21 +64,21 @@ const products = [
 ];
 
 export default function ProductsSection() {
-  const naviagte = useNavigate()
-  const hanldeLoom = () =>{
-  naviagte("/loom")
-}
+  const navigate = useNavigate()
+  const handleLoom = () => {
+    navigate("/loom")
+  }
   return (
     <section
       id="products"
-      aria-label="Our Products"
+      aria-labelledby="products-heading"
       className="bg-[#0E0E13] px-6 py-10"
     >
       <div className="max-w-7xl mx-auto w-full">
 
         {/* Section heading */}
         <div className="mb-14">
-          <h2 className="text-white font-bold text-3xl md:text-4xl m-0 font-serif">
+          <h2 id="products-heading" className="text-white font-bold text-3xl md:text-4xl m-0 font-serif">
             Our Products
           </h2>
           <div className="w-12 h-[3px] bg-violet-600 rounded-full mt-3" aria-hidden="true" />
@@ -141,7 +142,7 @@ export default function ProductsSection() {
                 {/* Read more */}
                 <div className="flex justify-center">
                   <button
-                   onClick={hanldeLoom}
+                   onClick={handleLoom}
                     aria-label={`Read more about ${product.name}`}
                     className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-semibold no-underline transition-colors duration-200"
                   >
