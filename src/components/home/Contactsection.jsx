@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 
+const JSONLD_ID = "bespoke-localbusiness-jsonld";
+
 export default function ContactHomeSection() {
   const [form, setForm] = useState({ name: "", company: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
+    if (document.getElementById(JSONLD_ID)) return;
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
-    script.id = "bespoke-localbusiness-jsonld";
+    script.id = JSONLD_ID;
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -31,12 +35,10 @@ export default function ContactHomeSection() {
       },
       "areaServed": "South Africa"
     });
-    if (!document.getElementById("bespoke-localbusiness-jsonld")) {
-      document.head.appendChild(script);
-    }
+    document.head.appendChild(script);
+
     return () => {
-      const existing = document.getElementById("bespoke-localbusiness-jsonld");
-      if (existing) existing.remove();
+      document.getElementById(JSONLD_ID)?.remove();
     };
   }, []);
 
@@ -128,7 +130,7 @@ export default function ContactHomeSection() {
             </address>
           </div>
 
-          {/*  contact form */}
+          {/* contact form */}
           <div className="bg-[#16151c] border border-white/[0.07] rounded-2xl p-7">
             {submitted ? (
               <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
@@ -143,7 +145,6 @@ export default function ContactHomeSection() {
                 onSubmit={handleSubmit}
                 aria-label="Contact form"
                 className="flex flex-col gap-4"
-                noValidate
               >
                 {[
                   { id: "name", name: "name", type: "text", placeholder: "Your Name", required: true },

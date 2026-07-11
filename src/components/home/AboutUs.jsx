@@ -12,7 +12,6 @@ export default function AboutUs() {
       aria-labelledby="about-heading"
       className="relative bg-[#0E0E13] px-6 py-24 lg:py-32 overflow-hidden"
     >
-      {/*  glow */}
       <div
         aria-hidden="true"
         className="absolute -top-40 -left-40 w-[480px] h-[480px] rounded-full bg-violet-700/10 blur-[120px] pointer-events-none"
@@ -25,7 +24,7 @@ export default function AboutUs() {
       <div className="relative max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-16 lg:gap-20 items-start">
 
-          {/* Left column  about us */}
+          {/*  about us */}
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-4">
               <p className="text-violet-400 text-xs font-bold tracking-[0.3em] uppercase m-0">
@@ -79,7 +78,7 @@ export default function AboutUs() {
             </a>
           </div>
 
-          {/* Right column mission/vision */}
+          {/* mission/vision */}
           <div className="flex flex-col gap-6">
             <div className="relative bg-gradient-to-br from-[#1d1a2b] to-[#16151c] border border-white/[0.08] rounded-3xl p-8 lg:p-10 min-h-[280px] flex items-center justify-center overflow-hidden">
               <div
@@ -91,7 +90,7 @@ export default function AboutUs() {
                 }}
               />
               <img
-                src="./Cloud.png"
+                src="/Cloud.png"
                 alt="Cloud and digital infrastructure illustration representing Bespoke Solutech's managed digital operations"
                 className="relative w-full max-w-[320px] h-auto object-contain"
               />

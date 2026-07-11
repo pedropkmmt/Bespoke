@@ -1,10 +1,11 @@
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const navLinks = [
-  { label: "Home",     href: "#home" },
-  { label: "About",    href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Contact",  href: "#contact" },
+  { label: "Home",     section: "home" },
+  { label: "About",    section: "about" },
+  { label: "Products", section: "products" },
+  { label: "Contact",  section: "contact" },
 ];
 
 const legalLinks = [
@@ -68,7 +69,6 @@ export default function Footer() {
       aria-label="Bespoke Solutech footer"
       className="relative bg-[#0E0E13] border-t border-white/[0.06] overflow-hidden"
     >
-      {/*  glow */}
       <div
         aria-hidden="true"
         className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-violet-700/[0.07] blur-[120px] pointer-events-none"
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="flex flex-col gap-6">
-            <img src="./logo.png" alt="Bespoke Solutech" width={90} className="block" />
+            <img src="/logo.png" alt="Bespoke Solutech" width={90} className="block" />
 
             <p className="text-white/50 text-sm leading-relaxed m-0 max-w-[260px]">
               Operating and managing digital products and services for businesses across South Africa.
@@ -124,20 +124,19 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company */}
           <nav aria-label="Company links">
             <p className="text-white/35 text-[11px] font-bold tracking-[0.2em] uppercase m-0 mb-5">
               Company
             </p>
             <ul className="flex flex-col gap-3.5 list-none m-0 p-0">
-              {navLinks.map(({ label, href }) => (
+              {navLinks.map(({ label, section }) => (
                 <li key={label}>
-                  <a
-                    href={href}
+                  <Link
+                    to={`/#${section}`}
                     className="text-white/60 text-sm no-underline hover:text-white transition-colors duration-200"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -180,18 +179,6 @@ export default function Footer() {
                 </p>
               ))}
             </div>
-            {/* <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                "Unit H22, Workpods, 1024 Brand Road, President Park AH, Midrand, 1686, South Africa"
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-violet-400 hover:text-violet-300 text-xs font-semibold no-underline transition-colors duration-200"
-              aria-label="Get directions to Bespoke Solutech"
-            >
-              Get directions
-              <ArrowUpRight size={13} strokeWidth={2.5} aria-hidden="true" />
-            </a> */}
           </address>
         </div>
 

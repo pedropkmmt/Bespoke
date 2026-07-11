@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
- { label: "Home", href: "#home", section: "home" },
-  { label: "About", href: "#about", section: "about" },
-  { label: "Products", href: "#products", section: "products" },
-  // { label: "Events", href: "/events", },
-  { label: "Contact", href: "#contact", section: "contact" },
+  { label: "Home", section: "home" },
+  { label: "About", section: "about" },
+  { label: "Products", section: "products" },
+  // { label: "Events", href: "/events" },
+  { label: "Contact", section: "contact" },
 ];
 
 export default function Navbar() {
@@ -33,13 +33,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between gap-8">
 
-        {/* Logo */}
+        {/* Logo  */}
         <Link
           to="/"
           aria-label="Bespoke Solutech — home"
           className="flex items-center gap-3 no-underline flex-shrink-0"
         >
-         <img src="./logo.png" alt="Bespoke Logo" width={70} height={100}/>
+          <img src="/logo.png" alt="Bespoke Logo" width={70} height={100} />
         </Link>
 
         {/* Desktop Nav */}
@@ -64,15 +64,15 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Contact Us*/}
+        {/* Contact Us */}
         <div className="flex items-center gap-3 flex-shrink-0">
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             aria-label="Contact Bespoke Solutech"
             className="hidden sm:inline-block px-6 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-700 active:scale-95 text-white text-sm font-semibold tracking-wide no-underline transition-all duration-200"
           >
             Contact Us
-          </a>
+          </Link>
 
           <button
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -85,16 +85,16 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer  */}
       {mobileOpen && (
         <nav
           aria-label="Mobile navigation"
           className="sm:hidden bg-[#0e0d14] border-t border-white/5 px-6 pt-4 pb-6 flex flex-col gap-1"
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={`/#${link.section}`}
               onClick={() => { setActiveLink(link.label); setMobileOpen(false); }}
               className={`px-4 py-3 rounded-lg text-[15px] no-underline transition-colors duration-150 ${
                 activeLink === link.label
@@ -103,15 +103,15 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             onClick={() => setMobileOpen(false)}
             className="mt-3 px-4 py-3 rounded-lg bg-violet-600 hover:bg-violet-700 text-white text-[15px] font-semibold text-center no-underline transition-colors duration-150"
           >
             Contact Us
-          </a>
+          </Link>
         </nav>
       )}
     </header>
