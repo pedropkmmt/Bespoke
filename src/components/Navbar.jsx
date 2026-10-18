@@ -74,6 +74,14 @@ export default function Navbar() {
             Contact Us
           </Link>
 
+          <a
+            href="https://bespokeform.netlify.app/"
+            aria-label="Contact Bespoke Solutech"
+            className="hidden sm:inline-block px-6 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-700 active:scale-95 text-white text-sm font-semibold tracking-wide no-underline transition-all duration-200"
+          >
+            Enquiries
+          </a>
+
           <button
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -112,6 +120,13 @@ export default function Navbar() {
           >
             Contact Us
           </Link>
+           <a
+            href="https://bespokeform.netlify.app/"
+            onClick={() => setMobileOpen(false)}
+            className="mt-3 px-4 py-3 rounded-lg bg-violet-600 hover:bg-violet-700 text-white text-[15px] font-semibold text-center no-underline transition-colors duration-150"
+          >
+             Enquiries
+          </a>
         </nav>
       )}
     </header>
