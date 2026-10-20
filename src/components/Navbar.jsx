@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Products", section: "products" },
   // { label: "Events", href: "/events" },
   { label: "Contact", section: "contact" },
+  { label: "Demo", href: "/demo" },
 ];
 
 export default function Navbar() {
@@ -50,7 +51,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.label}
-              to={`/#${link.section}`}
+              to={link.href ?? `/#${link.section}`}
               aria-current={activeLink === link.label ? "page" : undefined}
               onClick={() => setActiveLink(link.label)}
               className={`px-[18px] py-1.5 rounded-full text-sm no-underline transition-all duration-200 ${
@@ -102,7 +103,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.label}
-              to={`/#${link.section}`}
+              to={link.href ?? `/#${link.section}`}
               onClick={() => { setActiveLink(link.label); setMobileOpen(false); }}
               className={`px-4 py-3 rounded-lg text-[15px] no-underline transition-colors duration-150 ${
                 activeLink === link.label

@@ -25,8 +25,8 @@ export default function HomePage() {
   return (
     <>
       <Seo
-        title="Bespoke Solutech | Digital Solutions, Professionally Operated — Midrand, South Africa"
-        description="Bespoke Solutech operates and manages digital products and services for businesses across South Africa — reliable, professionally run solutions with long-term support."
+        title="Bespoke Solutech | Digital Solutions, Professionally Operated Midrand, South Africa"
+        description="Bespoke Solutech operates and manages digital products and services for businesses across South Africa reliable, professionally run solutions with long-term support."
         path="/"
       />
       <Navbar />
