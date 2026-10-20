@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import { Link } from 'react-router'
 const products = [
-  { id: 2, name: 'Talently', image: './talent', link: 'https://e-recruite-hr-dashboard.netlify.app' },
+  { id: 2, name: 'Talently', image: './talent.png', link: 'https://e-recruite-hr-dashboard.netlify.app' },
   { id: 3, name: 'SetaSync', image: './seta.png', link: 'https://institution-dashboard.app-vut.co.za/login' },
   { id: 4, name: 'AssetVault', image: './asset.png', link: 'https://asset-manger-8q8do.ondigitalocean.app' },
   { id: 5, name: 'Grant4Me', image: './grant.png', link: 'https://grant4me.netlify.app/landing' },
